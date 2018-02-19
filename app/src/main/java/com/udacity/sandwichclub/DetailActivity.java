@@ -22,7 +22,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
-        TextView  alsoKnowntv = findViewById(R.id.also_known_tv);
+        TextView  alsoKnownAsTv = findViewById(R.id.also_known_tv);
         TextView  placeOfOriginTv = findViewById(R.id.origin_tv);
         TextView  descriptionTv = findViewById(R.id.description_tv);
         TextView  ingredientsTv = findViewById(R.id.ingredients_tv);
@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         for (String details : sandwich.getAlsoKnownAs()) {
             builder1.append(details).append("\n");
         }
-        alsoKnowntv.setText(builder1.toString());
+        alsoKnownAsTv.setText(builder1.toString());
 
 
         placeOfOriginTv.setText(sandwich.getPlaceOfOrigin());
