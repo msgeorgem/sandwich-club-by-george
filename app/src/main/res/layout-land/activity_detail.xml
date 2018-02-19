@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.3"
+            app:layout_constraintGuide_percent="0.2"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="start"
-            android:paddingRight="130dp"
+            android:paddingRight="140dp"
             android:text="description description description"
             android:textAlignment="textStart"
             app:layout_constraintStart_toStartOf="@+id/horizontal_middle"

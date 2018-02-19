@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -21,6 +22,10 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
+        TextView  alsoKnowntv = findViewById(R.id.also_known_tv);
+        TextView  placeOfOriginTv = findViewById(R.id.origin_tv);
+        TextView  descriptionTv = findViewById(R.id.description_tv);
+        TextView  ingredientsTv = findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -49,6 +54,22 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
+
+        StringBuilder builder1 = new StringBuilder();
+        for (String details : sandwich.getAlsoKnownAs()) {
+            builder1.append(details).append("\n");
+        }
+        alsoKnowntv.setText(builder1.toString());
+
+
+        placeOfOriginTv.setText(sandwich.getPlaceOfOrigin());
+        descriptionTv.setText(sandwich.getDescription());
+
+        StringBuilder builder2 = new StringBuilder();
+        for (String details : sandwich.getIngredients()) {
+            builder2.append("* ").append(details).append("\n");
+        }
+        ingredientsTv.setText(builder2.toString());
     }
 
     private void closeOnError() {
